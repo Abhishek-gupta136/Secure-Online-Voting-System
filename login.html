@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | SecureVote</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="auth-body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container"><a class="navbar-brand fw-bold text-primary" href="index.html"><i class="fa-solid fa-shield-halved me-2"></i>SecureVote</a><a class="btn btn-outline-primary" href="admin.html">Admin</a></div>
+  </nav>
+  <main class="auth-wrap">
+    <div class="auth-card shadow">
+      <div class="text-center mb-4">
+        <i class="fa-solid fa-right-to-bracket auth-icon"></i>
+        <h1 class="h3 mt-3">Voter Login</h1>
+        <p class="text-secondary mb-0">Access your voting dashboard</p>
+      </div>
+      <form id="loginForm" novalidate>
+        <div class="mb-3">
+          <label class="form-label">Voter ID or Email</label>
+          <input type="text" id="loginId" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" id="loginPassword" class="form-control" required>
+        </div>
+        <button class="btn btn-primary w-100" type="submit"><i class="fa-solid fa-lock-open me-2"></i>Login</button>
+      </form>
+      <p class="text-center mt-3 mb-0 small">New voter? <a href="register.html">Register now</a></p>
+    </div>
+  </main>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast"><div class="toast-body"></div></div></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

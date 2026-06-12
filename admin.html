@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel | SecureVote</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container"><a class="navbar-brand fw-bold text-primary" href="index.html"><i class="fa-solid fa-shield-halved me-2"></i>SecureVote Admin</a><a class="btn btn-outline-primary" href="results.html">Results</a></div>
+  </nav>
+  <main class="dashboard-shell">
+    <div class="container">
+      <section id="adminLoginCard" class="auth-card shadow mx-auto">
+        <div class="text-center mb-4"><i class="fa-solid fa-user-shield auth-icon"></i><h1 class="h3 mt-3">Admin Login</h1><p class="text-secondary mb-0">Demo credentials: admin / admin123</p></div>
+        <form id="adminLoginForm">
+          <div class="mb-3"><label class="form-label">Username</label><input id="adminUser" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Password</label><input id="adminPass" type="password" class="form-control" required></div>
+          <button class="btn btn-primary w-100" type="submit">Login</button>
+        </form>
+      </section>
+
+      <section id="adminPanel" class="d-none">
+        <div class="dashboard-heading">
+          <div><p class="text-primary fw-semibold mb-1">Admin Module</p><h1 class="h2 mb-0">Election Control Panel</h1></div>
+          <button id="adminLogout" class="btn btn-outline-primary">Logout</button>
+        </div>
+        <div class="row g-3 mb-4" id="adminStats"></div>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="admin-box">
+              <h2 class="h5 mb-3"><i class="fa-solid fa-user-plus text-primary me-2"></i>Add Candidate</h2>
+              <form id="candidateForm">
+                <div class="mb-3"><label class="form-label">Name</label><input id="candidateName" class="form-control" required></div>
+                <div class="mb-3"><label class="form-label">Position</label><input id="candidatePosition" class="form-control" value="Student Council President" required></div>
+                <div class="mb-3"><label class="form-label">Photo URL</label><input id="candidatePhoto" class="form-control" placeholder="assets/images/candidate.png or image URL"></div>
+                <div class="mb-3"><label class="form-label">Manifesto</label><textarea id="candidateManifesto" class="form-control" rows="4" required></textarea></div>
+                <button class="btn btn-primary w-100" type="submit">Add Candidate</button>
+              </form>
+              <button id="resetElection" class="btn btn-danger w-100 mt-3"><i class="fa-solid fa-rotate-left me-2"></i>Reset Election</button>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="admin-box mb-4">
+              <h2 class="h5 mb-3"><i class="fa-solid fa-users text-primary me-2"></i>Candidates</h2>
+              <div class="table-responsive"><table class="table align-middle"><thead><tr><th>Name</th><th>Position</th><th>Votes</th><th>Action</th></tr></thead><tbody id="candidateTable"></tbody></table></div>
+            </div>
+            <div class="admin-box">
+              <h2 class="h5 mb-3"><i class="fa-solid fa-address-book text-primary me-2"></i>Registered Voters</h2>
+              <div class="table-responsive"><table class="table align-middle"><thead><tr><th>Name</th><th>Voter ID</th><th>Email</th><th>Status</th></tr></thead><tbody id="voterTable"></tbody></table></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast"><div class="toast-body"></div></div></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

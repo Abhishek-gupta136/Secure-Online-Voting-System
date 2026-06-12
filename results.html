@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Election Results | SecureVote</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="index.html"><i class="fa-solid fa-shield-halved me-2"></i>SecureVote</a>
+      <div class="d-flex gap-2"><a class="btn btn-outline-primary" href="dashboard.html">Vote</a><a class="btn btn-primary" href="admin.html">Admin</a></div>
+    </div>
+  </nav>
+  <main class="dashboard-shell">
+    <div class="container">
+      <div class="dashboard-heading">
+        <div><p class="text-primary fw-semibold mb-1">Result Module</p><h1 class="h2 mb-0">Election Results</h1></div>
+        <div id="totalVotesBox" class="stat-pill"></div>
+      </div>
+      <div id="winnerBox" class="winner-box mb-4"></div>
+      <div class="row g-4">
+        <div class="col-lg-8"><div class="admin-box"><h2 class="h5 mb-3">Vote Count Visualization</h2><canvas id="resultChart" height="135"></canvas></div></div>
+        <div class="col-lg-4"><div class="admin-box"><h2 class="h5 mb-3">Candidate Summary</h2><div id="resultList"></div></div></div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>
